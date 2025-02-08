@@ -23,22 +23,39 @@
 
 
     <!--Styles-->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css"> 
     <link rel="icon" href="images/favicon.ico">
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Playfair+Display&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
-        <h1>Placeholder</h1>
+        <div id="dynamicHeader">Placeholder</div>
     </header>
     <main>
-        <h2>Placeholder</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam officia vitae 
-            eveniet? Ipsum voluptates modi reiciendis tempore enim aliquid aut excepturi 
-            officiis fugit, quasi temporibus. Neque recusandae inventore quae atque?</p>
+        <section class="searchArea">
+            <div id="searchBar">Search Bar</div>
+        </section>
+        <section class="cards">
+        <div id="weatherCard">Weather Card</div>
+        <div id="mapCard">Map of the location</div>
+        <div id="recommendationsCard">Recommendations based on weather</div>
+        </section>
+        <section class="newsletterArea">
+            <form id="newsletterForm">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <button type="submit" class="subscribeButton">Subscribe</button>
+            </form>
+        </section>
     </main>
     <footer>
-        <p>Placeholder | 2025 | Jordan Sanchez | Placeholder</p>
-        <script src="scripts/main.mjs" type="module"></script>
+        <div id="footerDynamic">Placeholder | 2025 | Jordan Sanchez | Placeholder</div>
     </footer>
+    <script src="scripts/main.mjs" type="module"></script>
 </body>
 </html>

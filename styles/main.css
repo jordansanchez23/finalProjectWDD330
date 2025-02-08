@@ -1,0 +1,32 @@
+:root {
+    --primary-color: #E3E7AF;
+    --secondary-color: #A2A77F;
+    --background-color: #EFF1C5;
+    --card-background-color: #035E7B; 
+
+    --heading-font: "Playfair", serif;
+    --paragraph-font: "Barlow", sans-serif;
+
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #000000;
+    --nav-link-color: var(--primary-text-color);
+    --nav-background-color: var(--primary-color);
+    --nav-hover-link-color:var(--secondary-text-color);
+    --nav-hover-background-color: var(--secondary-color);
+}
+
+* {
+    font-family: var(--paragraph-font);
+    margin: 0;
+    padding: 0;
+    /*box-sizing: border-box;*/
+}
+
+body {
+    font-family: var(--paragraph-font);
+    background-color: var(--background-color);
+}
+
+h1, h2, .navigation {
+    font-family: var(--heading-font);
+}
