@@ -1,0 +1,86 @@
+{
+    "sunny": [
+        "Go for a run in the park",
+        "Head to the beach for swimming and sunbathing",
+        "Go for a bike ride around the city",
+        "Have a picnic outdoors",
+        "Try an outdoor workout or yoga session"
+    ],
+    "clouds": [
+        "Take a leisurely walk through the city",
+        "Visit a local museum or gallery",
+        "Go to a cozy café for a hot drink",
+        "Enjoy an afternoon of reading or journaling",
+        "Try a new indoor activity like painting or pottery"
+    ],
+    "rain": [
+        "Stay inside and binge-watch your favorite shows",
+        "Do some indoor workouts like yoga or pilates",
+        "Visit an indoor pool for swimming",
+        "Enjoy some board games or puzzles",
+        "Make a new recipe or bake something sweet"
+    ],
+    "snowy": [
+        "Go skiing or snowboarding at a local resort",
+        "Build a snowman or have a snowball fight",
+        "Warm up with a hot cocoa and a good book",
+        "Go ice skating at a local rink",
+        "Take a winter hike or a walk in the snow"
+    ],
+    "stormy": [
+        "Stay indoors and enjoy a movie marathon",
+        "Read a book or listen to a podcast",
+        "Do a home workout or meditation",
+        "Organize or declutter your space",
+        "Cook a new recipe and have a cozy dinner"
+    ],
+    "foggy": [
+        "Go for a quiet walk and enjoy the mystery of the fog",
+        "Visit a museum or art gallery",
+        "Spend time indoors with a hot beverage and a movie",
+        "Try a mindfulness or meditation session",
+        "Take photos of the foggy landscape for a creative project"
+    ],
+    "overcast_clouds": [
+        "Visit a local museum or art gallery",
+        "Enjoy a cozy indoor activity like knitting or painting",
+        "Go for a walk in the park with a light jacket",
+        "Have a movie marathon with friends or family",
+        "Try indoor rock climbing or go to the gym"
+    ],
+    "clear_sky": [
+        "Hiking in the mountains",
+        "Take a day trip to the beach",
+        "Go for a swim in a lake or pool",
+        "Outdoor yoga or tai chi",
+        "Enjoy a scenic drive through the countryside"
+    ],
+    "drizzle": [
+        "Take a short walk with an umbrella",
+        "Visit a local indoor market or shopping mall",
+        "Go to a cozy café and read a book",
+        "Do an indoor workout or yoga session",
+        "Watch a movie or binge a series while enjoying a warm drink"
+    ],
+    "mist": [
+        "Take a walk through the foggy streets for a mysterious atmosphere",
+        "Visit a cozy café to enjoy a hot drink and relax",
+        "Try a mindfulness walk to clear your mind in the mist",
+        "Explore a park or nature trail with the calming mist around you",
+        "Take photos of the misty scenery for a creative project"
+    ],
+    "snow": [
+        "Go skiing or snowboarding at a local resort",
+        "Build a snowman or have a snowball fight",
+        "Warm up with a hot cocoa and a good book",
+        "Go ice skating at a local rink",
+        "Take a winter hike or a walk in the snow"
+    ],
+    "clear": [
+        "Hiking in the mountains",
+        "Take a day trip to the beach",
+        "Go for a swim in a lake or pool",
+        "Outdoor yoga or tai chi",
+        "Enjoy a scenic drive through the countryside"
+    ]
+}
