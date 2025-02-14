@@ -1,6 +1,17 @@
 import { recommendations } from './recommendations.mjs';
+import { displayMap } from './map.mjs';
 
 const weatherAPIKey = "4d4ad70f8e9b0f1d0300f1c0686afb24";  //API Key
+
+// Función para inicializar el mapa
+async function initMap(city) {
+    if (city !== "") {
+        const weatherData = await getWeather(city);  // Obtener datos del clima
+        if (weatherData) {
+            displayMap(weatherData);  // Mostrar el mapa
+        }
+    }
+}
 
 // Función que se ejecuta cuando el usuario busca el clima
 async function lookUpWeather() {
@@ -14,6 +25,7 @@ async function lookUpWeather() {
     if (weatherData) {
         displayWeatherCard(weatherData); // Mostrar los datos en la tarjeta
         recommendations(weatherData); // Mostrar recomendaciones basadas en el clima
+        initMap(city); // Mostrar el mapa con la ubicación según la ciudad
     } else {
         alert("City not found. Please try again.");
     }

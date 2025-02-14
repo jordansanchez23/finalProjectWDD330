@@ -41,7 +41,10 @@
         </section>
         <section class="cards">
         <div id="weatherCard">Weather Card</div>
-        <div id="mapCard">Map of the location</div>
+        <div id="mapCard">
+            <h3>Location on Map</h3>
+            <div id="map" style="width: 100%; height: 300px;"></div> <!-- Contenedor para el mapa -->
+        </div>
         <div id="recommendationsCard">Recommendations based on weather</div>
         </section>
         <section class="newsletterArea">
@@ -55,5 +58,6 @@
     <div id="dynamicFooter"></div>
     <script src="scripts/main.mjs" type="module"></script>
     <script src="scripts/header-footer.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ-l0XsEJaKFHjmd22j_HSGE-Ir1n3kEs&callback=initMap" async defer></script>
 </body>
 </html>
