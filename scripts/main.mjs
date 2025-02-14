@@ -1,6 +1,6 @@
 import { recommendations } from './recommendations.mjs';
 
-const weatherAPIKey = "4d4ad70f8e9b0f1d0300f1c0686afb24";  // Tu API Key
+const weatherAPIKey = "4d4ad70f8e9b0f1d0300f1c0686afb24";  //API Key
 
 // Función que se ejecuta cuando el usuario busca el clima
 async function lookUpWeather() {
