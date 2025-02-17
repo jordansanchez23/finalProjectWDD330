@@ -2,7 +2,7 @@ import { getWeather } from './main.mjs';
 
 export async function recommendations() {
     const city = document.getElementById("searchInput").value; // Retrieves city
-    const weather = await getWeather(city); // Obtener el clima según la ubicación ingresada
+    const weather = await getWeather(city); //Retrieve recommendation depending on weather
     // Retrieves weather based on location inputted
     if (!weather) return;  // An if statement if doesn't find the location
 
