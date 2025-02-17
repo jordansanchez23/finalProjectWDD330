@@ -73,6 +73,13 @@ function displayWeatherCard(data) {
 // Associate the lookUpWeather event with the LOCAL STORAGE lookUpWeather function
 document.getElementById("searchButton").addEventListener("click", lookUpWeather);
 
+// Associate the lookUpWeather event with the ENTER KEY in the search input
+document.getElementById("searchInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {  // Verifies if the key pressed is Enter
+        lookUpWeather();  // Calls the function to look up the weather
+    }
+})
+
 // Function to load the city saved in localStorage on page load
 document.addEventListener("DOMContentLoaded", () => {
     const lastCity = localStorage.getItem('lastCity');
