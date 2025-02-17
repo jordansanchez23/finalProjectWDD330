@@ -6,7 +6,7 @@ export async function recommendations() {
     // Retrieves weather based on location inputted
     if (!weather) return;  // An if statement if doesn't find the location
 
-    const response = await fetch("../json/recommendations.json");
+    const response = await fetch("https://jordansanchez23.github.io/finalProjectWDD330/data/recommendations.json");
     const recommendationsData = await response.json();
 
     // Normalizes the string of weather (example: "clear sky" a "clear")
