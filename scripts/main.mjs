@@ -21,6 +21,9 @@ async function lookUpWeather() {
         return;
     }
 
+    //Local storage for previous cities
+    localStorage.setItem('lastCity', city);
+
     const weatherData = await getWeather(city); // Obtener datos de clima
     if (weatherData) {
         displayWeatherCard(weatherData); // Mostrar los datos en la tarjeta
@@ -67,5 +70,14 @@ function displayWeatherCard(data) {
     `;
 }
 
-// Asociar el evento de búsqueda con la función lookUpWeather
+// Asociar el evento de búsqueda con la función lookUpWeather LOCAL STORAGE
 document.getElementById("searchButton").addEventListener("click", lookUpWeather);
+
+// Función para cargar la ciudad guardada en el localStorage al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    const lastCity = localStorage.getItem('lastCity');
+    if (lastCity) {
+        document.getElementById("searchInput").value = lastCity;
+        lookUpWeather(); // Buscar el clima para la ciudad guardada
+    }
+});
