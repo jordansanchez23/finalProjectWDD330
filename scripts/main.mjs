@@ -3,19 +3,19 @@ import { displayMap } from './map.mjs';
 
 const weatherAPIKey = "4d4ad70f8e9b0f1d0300f1c0686afb24";  //API Key
 
-// Función para inicializar el mapa
+// Function to iniit map
 async function initMap(city) {
     if (city !== "") {
-        const weatherData = await getWeather(city);  // Obtener datos del clima
+        const weatherData = await getWeather(city);  // Retrieves data from weather
         if (weatherData) {
-            displayMap(weatherData);  // Mostrar el mapa
+            displayMap(weatherData);  // Displays weather
         }
     }
 }
 
-// Función que se ejecuta cuando el usuario busca el clima
+// Function that executes when the user makes an input
 async function lookUpWeather() {
-    const city = document.getElementById("searchInput").value.trim();  // Obtener el nombre de la ciudad
+    const city = document.getElementById("searchInput").value.trim();  // Retrieves the name of the city
     if (city === "") {
         alert("Please enter a city name!");
         return;
@@ -24,17 +24,17 @@ async function lookUpWeather() {
     //Local storage for previous cities
     localStorage.setItem('lastCity', city);
 
-    const weatherData = await getWeather(city); // Obtener datos de clima
+    const weatherData = await getWeather(city); // Retrieves data from weather
     if (weatherData) {
-        displayWeatherCard(weatherData); // Mostrar los datos en la tarjeta
-        recommendations(weatherData); // Mostrar recomendaciones basadas en el clima
-        initMap(city); // Mostrar el mapa con la ubicación según la ciudad
+        displayWeatherCard(weatherData); // Displays data on card
+        recommendations(weatherData); // Displays recommendation on card based on weather
+        initMap(city); // Displays the map with the location based on the input (city)
     } else {
         alert("City not found. Please try again.");
     }
 }
 
-// Función para obtener el clima desde la API de OpenWeather
+// Function to retrieve the weather from API of OpenWeather
 export async function getWeather(city) {
     try {
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherAPIKey}&units=metric`);
@@ -43,24 +43,24 @@ export async function getWeather(city) {
             throw new Error("City not found");
         }
         
-        const data = await response.json(); // Obtener los datos en formato JSON
-        return data;  // Retornar los datos del clima
+        const data = await response.json(); // JSON Retrieves data as json format
+        return data;  // Returns the data from weather
     } catch (error) {
         console.error(error);
-        return null;  // Si hay error, retornamos null
+        return null;  // Returns null if exists error
     }
 }
 
-// Función para mostrar los datos del clima en una tarjeta
+// Function to display data from weather on card
 function displayWeatherCard(data) {
     const weatherCard = document.getElementById("weatherCard");
     const cityName = data.name;
     const temperature = data.main.temp;
     const humidity = data.main.humidity;
     const description = data.weather[0].main;
-    const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`; // Icono del clima
+    const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`; // Weather Icon
 
-    // Mostrar los datos en el HTML
+    // Display Info on HTML
     weatherCard.innerHTML = `
         <h2>Weather in ${cityName}</h2>
         <img src="${icon}" alt="Weather icon">
@@ -70,14 +70,14 @@ function displayWeatherCard(data) {
     `;
 }
 
-// Asociar el evento de búsqueda con la función lookUpWeather LOCAL STORAGE
+// Associate the lookUpWeather event with the LOCAL STORAGE lookUpWeather function
 document.getElementById("searchButton").addEventListener("click", lookUpWeather);
 
-// Función para cargar la ciudad guardada en el localStorage al cargar la página
+// Function to load the city saved in localStorage on page load
 document.addEventListener("DOMContentLoaded", () => {
     const lastCity = localStorage.getItem('lastCity');
     if (lastCity) {
         document.getElementById("searchInput").value = lastCity;
-        lookUpWeather(); // Buscar el clima para la ciudad guardada
+        lookUpWeather(); // This function inside ths DOM finds the weather for the saved city
     }
 });

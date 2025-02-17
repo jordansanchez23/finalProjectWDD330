@@ -1,17 +1,18 @@
 import { getWeather } from './main.mjs';
 
 export async function recommendations() {
-    const city = document.getElementById("searchInput").value; // Obtener la ciudad
+    const city = document.getElementById("searchInput").value; // Retrieves city
     const weather = await getWeather(city); // Obtener el clima según la ubicación ingresada
-    if (!weather) return;  // Si no se obtiene el clima, salir
+    // Retrieves weather based on location inputted
+    if (!weather) return;  // An if statement if doesn't find the location
 
-    const response = await fetch("/json/recommendations.json");
+    const response = await fetch("scripts/recommendations.json");
     const recommendationsData = await response.json();
 
-    // Normalizar el string de clima (ejemplo: "clear sky" a "clear")
+    // Normalizes the string of weather (example: "clear sky" a "clear")
     const weatherCondition = weather.weather[0].main.replace(" ", "_").toLowerCase();
 
-    const recommendations = recommendationsData[weatherCondition] || []; // Obtener recomendaciones según el tipo de clima
+    const recommendations = recommendationsData[weatherCondition] || []; // Retrieves recommendations based on weather
 
     const recommendationsCard = document.getElementById("recommendationsCard");
     recommendationsCard.innerHTML = "<h3>Recommendations:</h3>";
